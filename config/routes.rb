@@ -1,5 +1,13 @@
 AwsSimpleDbTool::Application.routes.draw do
 
+  match 'login_post'	=>	'welcome_page#login_post'
+  match 'logout'		=>	'welcome_page#logout'
+
+  match 'about'			=>	'welcome_page#about'
+
+  resource :sdb_domains
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -49,7 +57,7 @@ AwsSimpleDbTool::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "aws_credentials#index#index"
+  root :to => "welcome_page#index"
 
   # See how all your routes lay out with "rake routes"
 

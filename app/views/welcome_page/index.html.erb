@@ -1,0 +1,34 @@
+<h1>Welcome to Amazon SimpleDB WebUI</h1>
+<p>created to help you take a better look at the data you're storing
+	in <a href="http://aws.amazon.com/simpledb" target="_blank">Amazon SimpleDB</a></p>
+
+
+
+<%= form_for(:login_form , :url => login_post_path) do |form| %>
+
+	<% flash.each do |key, value| %>
+	  <div class="flash <%= key %>"><%= value %></div>
+	<% end %>
+
+
+	<table border="0" cellpadding="2" cellspacing="2" class="login_table">
+		<tr>
+			<td><%= form.label :aws_access_key %></td>
+			<td><%= form.text_field :aws_access_key %></td>
+		</tr>
+
+		<tr>
+			<td><%= form.label :aws_secret_key %></td>
+			<td><%= form.password_field :aws_secret_key %></td>
+		</tr>
+	</table>
+
+
+	<div class="actions">
+		<%= form.submit "Login" %>
+	</div>
+
+<% end %>
+
+
+
